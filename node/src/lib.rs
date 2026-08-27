@@ -29,6 +29,7 @@ pub enum Format {
     ods,
     odp,
     csv,
+    eml,
 }
 
 impl From<Format> for anydoc::Format {
@@ -46,6 +47,7 @@ impl From<Format> for anydoc::Format {
             Format::ods => anydoc::Format::Ods,
             Format::odp => anydoc::Format::Odp,
             Format::csv => anydoc::Format::Csv,
+            Format::eml => anydoc::Format::Eml,
         }
     }
 }
@@ -65,6 +67,7 @@ impl From<anydoc::Format> for Format {
             anydoc::Format::Ods => Format::ods,
             anydoc::Format::Odp => Format::odp,
             anydoc::Format::Csv => Format::csv,
+            anydoc::Format::Eml => Format::eml,
         }
     }
 }
