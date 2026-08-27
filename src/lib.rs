@@ -55,6 +55,9 @@ pub enum Format {
     /// Delimiter-separated text (`.csv`). Carries no signature, so it has to
     /// be named rather than detected.
     Csv,
+    /// RFC 5322 / MIME email (`.eml`). Header-structured text with no
+    /// signature, so it is named or resolved from the extension, never detected.
+    Eml,
 }
 
 impl Format {
@@ -83,6 +86,7 @@ impl Format {
             "ods" => Format::Ods,
             "odp" => Format::Odp,
             "csv" => Format::Csv,
+            "eml" => Format::Eml,
             _ => return None,
         })
     }
